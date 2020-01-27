@@ -103,7 +103,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.69, y: 0.89}
+    oldSize: {x: 1.43, y: 0.76}
     newSize: {x: 2.56, y: 1.57}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,9 +125,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.075399704}
+  m_Offset: {x: 0, y: 0.052791893}
   serializedVersion: 2
-  m_Radius: 0.86820215
+  m_Radius: 0.5177831
 --- !u!50 &810527905550418377
 Rigidbody2D:
   serializedVersion: 4
@@ -202,7 +202,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0479598
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
