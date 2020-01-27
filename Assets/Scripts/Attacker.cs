@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Attacker : MonoBehaviour
 {
+    AudioSource audio;
+    public AudioClip hitSound;
     public bool isPlayer = true;
     private bool isMove = true;
     public int attack = 100;
@@ -17,6 +20,7 @@ public class Attacker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<AudioSource>();
         if(isPlayer){
             nameTagLawan = "Enemy";
         } else {
@@ -37,13 +41,14 @@ public class Attacker : MonoBehaviour
              }
          } else {
              timer += Time.deltaTime;
-             if (timer > 0.6f){
+             if (timer > 0.6f){                 
+                 audio.PlayOneShot(hitSound);
                  defense -= underAttack;
                  transform.localScale = new Vector3(1, 1f);
                  timer = 0;
              } 
              else if (timer > 0.5f) {
-                transform.localScale = new Vector3(1, 1.2f);
+                transform.localScale = new Vector3(1, 1.2f);                
              }
          }
      }
@@ -60,16 +65,18 @@ public class Attacker : MonoBehaviour
          else {
              timer += Time.deltaTime;
              if (timer > 0.6f) {
+                 audio.PlayOneShot(hitSound);
                  defense -= underAttack;
                  transform.localScale = new Vector3(1, 1f);
                  timer = 0;
              } 
              else if (timer > 0.5f) {
-                 transform.localScale = new Vector3(1, 1.2f);
+                 transform.localScale = new Vector3(1, 1.2f);                 
              }
          }
      }
      if (defense <= 0) {
+         audio.PlayOneShot(hitSound);
          Destroy(gameObject);
      }
     if (transform.position.x > 9 || transform.position.x < -9) {

@@ -23,12 +23,6 @@ public class AutoReplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer > 3){
-            Data.isGameOver = false;
-            Data.isComplete = false;
-            Data.coin = 0;
-            SceneManager.LoadScene("Gameplay");
-        }
+       
     }
 }

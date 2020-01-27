@@ -13,7 +13,7 @@ public class Defender : MonoBehaviour
     private string nameTagLawan;
     // Start is called before the first frame update
     void Start()
-    {
+    {        
         if (isPlayer) {
             nameTagLawan = "Enemy";
         }
@@ -27,12 +27,12 @@ public class Defender : MonoBehaviour
         if (isDefend) {
             timer += Time.deltaTime;
             if (timer > 0.6f) {
-                defense -= underAttack;
+                defense -= underAttack;                
                 timer = 0;
             }
         }
 
-        if (defense <= 0){
+        if (defense <= 0){            
             Destroy(gameObject);
         }
         if (transform.position.x > 9 || transform.position.x < -9){
